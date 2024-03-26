@@ -26,7 +26,6 @@ namespace Entities.BizEntities
         public int? RoleId { get; set; }
         [JsonProperty("RoleName")]
         [DisplayName("Role Name")]
-        [Required(ErrorMessage = "Role Name is required.")]
         public string RoleName { get; set; }
 
         public RoleBizEntity Role { get; set; }

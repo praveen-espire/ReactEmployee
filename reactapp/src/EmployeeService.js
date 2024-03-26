@@ -1,7 +1,9 @@
+export const API_URL = 'https://localhost:7098';
+
 export default class EmployeeService {
     async getEmployees() {
         try {
-            const response = await fetch('https://localhost:7098/Employee');
+            const response = await fetch(`${API_URL}/Employee`);
             const data = await response.json();
             console.log(data.results);
             return data.results;
@@ -13,7 +15,7 @@ export default class EmployeeService {
 
     async addEmployee(employee) {
         try {
-            const response = await fetch('https://localhost:7098/Employee', {
+            const response = await fetch(`${API_URL}/Employee`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,7 +33,7 @@ export default class EmployeeService {
 
     async deleteEmployee(employeeId) {
         try {
-            const response = await fetch(`https://localhost:7098/Employee/${employeeId}`, {
+            const response = await fetch(`${API_URL}/Employee/${employeeId}`, {
                 method: 'DELETE'
             });
             console.log(response);
